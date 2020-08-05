@@ -6,7 +6,7 @@ clear; close all; clc
 %GPS DATA
 %load('CVF9LatX.mat'); load('CVF9LongY.mat');
 %Ideal AASHTO
-load('MichXm.mat'); load('MichYm.mat');
+load('IdealXm.mat'); load('IdealYm.mat');
 %x2 = LatX'; y2 = LongY';   
 x2 = xm'; y2 = ym';
 x2 = unique(x2); y2 = unique(y2);
