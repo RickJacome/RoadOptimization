@@ -1,3 +1,8 @@
+%   Based off the code from 
+%   Are Mjaavatten (2019). Curvature of a 2D or 3D curve
+%   (https://www.mathworks.com/matlabcentral/
+%   fileexchange/69452-curvature-of-a-2d-or-3d-curve),
+%   MATLAB Central File Exchange. 
 function [R,M,k] = circumcenter(A,B,C)
 % Center and radius of the circumscribed circle for the triangle ABC
 %  A,B,C  3D coordinate vectors for the triangle corners
