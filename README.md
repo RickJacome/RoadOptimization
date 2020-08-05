@@ -1,6 +1,8 @@
 # Road Data Optimization for CAV Reference
 
 This is a github created for sharing the code and data used in a publication called "Road Reference Profiles based on Optimization Routines for Connected and Automated Vehicles".
+Insert citation here:
+
 
 The data and mathematical development of the code is found in the paper. 
 Three main files are provided within this repository:
