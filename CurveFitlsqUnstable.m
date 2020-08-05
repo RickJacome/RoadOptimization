@@ -1,4 +1,6 @@
 clc; clear all; close all
+% Investigation on the stability of the different M.X models proposed
+% and their behavior under ideal data with noise
 s = 1:.01:12; n = numel(s)-1;
 %y = [0 2 4.8 5.2 5 5.6];
 y1 = 2.*s(1:n/2) - 1;   y2 = 11*ones(1,n/2);
