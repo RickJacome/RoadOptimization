@@ -1,3 +1,8 @@
+%   Based off the code from 
+%   Are Mjaavatten (2019). Curvature of a 2D or 3D curve
+%   (https://www.mathworks.com/matlabcentral/
+%   fileexchange/69452-curvature-of-a-2d-or-3d-curve),
+%   MATLAB Central File Exchange. 
 function [L,R,kappa] = curvature(X)
 % Radius of curvature and curvature vector for 2D or 3D curve
 %  [L,R,Kappa] = curvature(X)
