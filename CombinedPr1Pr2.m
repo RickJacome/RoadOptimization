@@ -1,6 +1,7 @@
 clc; clear all; close all
-% This code takes a curvature model (M#) and
-% implements both Pr. 1 and Pr. 2 together.
+% This code takes a curvature model (M.X) and
+% implements both Least Squares Optimization and  The Nonlinear Iterative
+% Optimization together.
 % It creates a loop of optimization problems related to the Curvature
 % model provided with Pr. 2. Such that an optimal velocity is found for 
 % every curvature datapoint for any general [s] road. 
@@ -9,7 +10,7 @@ clc; clear all; close all
 s = 1:.01:25; n = numel(s)-1;
 y1 = (2.*s(1:n/2) - 3)*1e-3;
 y2 = 26*ones(1,n/2)*1e-3;
-% Added Gaussian noise, but not needed.
+% Added Gaussian noise.
 y1o = awgn(y1,25,'measured'); y2o = awgn(y2,25,'measured');
 y = [y1o y2o];
 % Initial Conditions, NEVER repeat them.
@@ -19,7 +20,7 @@ M1 = @(x,s) ((x(5)./(x(2)-x(1))).*(s - x(1))).*(heaviside(s-x(1)) - heaviside(s-
      x(5).*(heaviside(s-x(2))-heaviside(s-x(3))) + ...
 ( ( x(5)./(x(4)-x(3))).*(-s+x(3))+ x(5) ).*(heaviside(s-x(3)) - heaviside(s-x(4))); 
 % Pr.1
-fprintf('Pr. 1, Least Squares Min. Has finalized');
+fprintf('Pr. 1, Least Squares Min. Has finalized \n');
 options = optimset('Display','off');
 x = lsqcurvefit(M1,x0,s(1:end-1),y,[],[],options)
 snew = linspace(s(1),s(end-1),100); % <--- This defines the 
@@ -59,7 +60,7 @@ nonlcon = @EqConstraint;
 options = optimoptions('fmincon','Display','off');
 Op(i,:) = fmincon(fun,x0,A,b,Aeq,beq,lb,ub,nonlcon,options);  
 end
-fprintf('Pr. 2 Has finalized \n');
+fprintf('Pr. 2 Nonlinear Optimization Has finalized \n');
 figure; plot(snew,Op(:,2))
 title('Segment Length vs Velocity Optimized'); grid on
 figure; plot(M1(x,snew),Op(:,2))
