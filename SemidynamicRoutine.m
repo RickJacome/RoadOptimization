@@ -1,5 +1,11 @@
 %%%%---------------------------------------------
 % 6-25-2020
+% This combines the research performed in 2 papers:
+% Jacome, R., Stolle, C. and Sweigard, M., 
+% “Road Curvature Decomposition for Autonomous Guidance,” SAE Technical Paper
+% 2020-01-1024, 2020, doi:10.4271/2020-01-1024.
+% And:
+% Citation Needed::::::
 % For this SemiDynamic Routine to work
 % (1) Select your Data i.e. GPS, Google Earth, AASHTO, etc.
 % (2) Select a range that occupies one "curve segment" i.e.
@@ -17,7 +23,7 @@ x2 = x2'*.3048; y2 = y2'*.3048;
 % load('CVF9LatX.mat'); load('CVF9LongY.mat');
 % x2 = LatX'; y2 = LongY'; 
 %Ideal AASHTO
-% load('MichXm.mat'); load('MichYm.mat');  
+% load('IdealXm.mat'); load('IdealYm.mat');  
 % x2 = xm'; y2 = ym';
 x2 = unique(x2,'stable'); y2 = unique(y2,'stable');
 x2 = x2(1:numel(y2));
