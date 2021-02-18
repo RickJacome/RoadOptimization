@@ -12,7 +12,7 @@
 % https://www.mathworks.com/matlabcentral/fileexchange/69452-curvature-of-a-1d-curve-in-a-2d-or-3d-space 
 %MATLAB Central File Exchange. 
 %%%---------------------------------------------
-clear; close all; clc
+%clear; close all; clc
 %%%---------------------------------------------
 %(1)
 %Google Earth Data
